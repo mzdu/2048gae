@@ -8,11 +8,7 @@
 		<link href="{{path}}" type="text/css" rel="stylesheet" />
 		{% endfor %}
 	{% endif %}
-	{% if javascript %}
-		{% for path in javascript %}
-		<script type="text/javascript" language="javascript" src="{{path}}"></script>
-		{% endfor %}
-	{% endif %}
+
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
@@ -85,7 +81,11 @@
     </p>
     <hr>
   </div>
-
+{% if javascript %}
+	{% for path in javascript %}
+	<script type="text/javascript" language="javascript" src="{{path}}"></script>
+	{% endfor %}
+{% endif %}
 
 </body>
 </html>
